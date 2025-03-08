@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amigo Secreto - Navelogic</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/variaveis.js" defer></script>
+    <script src="js/listners.js" defer></script>
+    <script src="js/funcoes.js" defer></script>
+</head>
+<body>
+    <div class="conteiner">
+        <h1>Amigo Secreto</h1>
+        
+        <div class="passo ativo" id="passo1">
+            <h2>Quem está organizando?</h2>
+            <div class="grupo-formulario">
+                <label for="nomeOrganizador">Seu nome:</label>
+                <input type="text" id="nomeOrganizador" placeholder="Digite seu nome">
+                <div class="erro" id="erroNomeOrganizador"></div>
+            </div>
+            <div class="grupo-formulario">
+                <div class="container-checkbox">
+                    <input type="checkbox" id="participacaoOrganizador" checked>
+                    <label for="participacaoOrganizador">Também quero participar do sorteio</label>
+                </div>
+            </div>
+            <div class="grupo-formulario">
+                <label for="nomeSorteio">Nome do sorteio:</label>
+                <input type="text" id="nomeSorteio" placeholder="Ex: Andar de Ruptura, Família Silva...">
+                <div class="erro" id="erroNomeSorteio"></div>
+            </div>
+            <button id="proximoPasso2">Continuar</button>
+        </div>
+        
+        <div class="passo" id="passo2">
+            <h2 id="nomeSorteioExibicao"></h2>
+            <p>Organizado por: <span id="nomeOrganizadorExibicao"></span></p>
+            
+            <div class="grupo-formulario">
+                <label for="nomeParticipante">Nome do participante:</label>
+                <input type="text" id="nomeParticipante" placeholder="Digite o nome do participante">
+                <div class="erro" id="erroNomeParticipante"></div>
+            </div>
+            <button id="adicionarParticipante">Adicionar</button>
+            
+            <h3>Participantes (<span id="contadorParticipantes">0</span>):</h3>
+            <div class="lista-participantes" id="listaParticipantes"></div>
+            
+            <button id="botaoSortear">Terminar e sortear!</button>
+        </div>
+        
+        <div class="passo" id="passo3">
+            <h2>Sorteando os pares...</h2>
+            <div class="animacao-sorteio" id="animacaoSorteio">
+                Sorteando...
+            </div>
+            <button id="mostrarResultados" style="display: none;">Ver resultados</button>
+        </div>
+        
+        <div class="passo" id="passo4">
+            <h2>Resultado do Sorteio</h2>
+            <p>Clique no seu nome para ver quem você tirou!</p>
+            <div class="resultados" id="listaResultados"></div>
+            <div class="reiniciar">
+                <button id="botaoReiniciar">Fazer novo sorteio</button>
+            </div>
+        </div>
+        
+        <footer class="rodape">
+            <p>Desenvolvido por Navelogic</p>
+            <div class="links-sociais">
+                <a href="https://navelogic.github.io/portfolio-youtube/" target="_blank" class="link-social">Meu Site</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
